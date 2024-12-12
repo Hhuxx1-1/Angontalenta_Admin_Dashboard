@@ -106,6 +106,19 @@ function tryAccess(){
         ) .then(response => response.json()) // Handle the response
         .then(data => {
             console.log('Success: Notif', data); // Log the response from the server
+            if (data.result == "OK" ){
+
+            }else if( data.status == "1"){
+                // clear current cookie if there is error and display error message
+                document.cookie = "token_ =; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                createNew(container,"h1","Error: Something is Wrong. Please try again.");
+            }else{
+                document.cookie = "token_ =; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                createNew(container,"h1","Error: Access Expired. Please Login Again.");
+                setTimeout(function(){
+                    onStart();
+                },3000)
+            }
         })
         .catch((error) => {
             console.error('Error:', error); // Log any error
@@ -119,7 +132,7 @@ function RequestCode(){
     };
     sendCode.style.display = "none";
     const notifier = createNew(container,"p","Kode Terkirim");
-    const notifier2 = createNew(container,"p","Silakan cek email Anda");
+    const notifier2 = createNew(container,"p","Silakan cek email Admin anda");
 
     // modify notifier each second for 60s to show countdown after countdown end remove that notifier and set the display of sendCode to Block again
     let count = 60;
@@ -176,7 +189,7 @@ function onStart() {
         if (token) {
           // Save the token as a cookie
           setCookie('tokenCode', token, 0.00694444); // Save for 10 minutes
-          formSection.remove();
+          container.innerHTML = ""; //clear content;
         }
       });
     } else {
