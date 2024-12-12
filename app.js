@@ -110,10 +110,10 @@ function tryAccess(){
 
             }else if( data.status == "1"){
                 // clear current cookie if there is error and display error message
-                document.cookie = "token_ =; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                document.cookie = "tokenCode =; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
                 createNew(container,"h1","Error: Something is Wrong. Please try again.");
             }else{
-                document.cookie = "token_ =; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                document.cookie = "tokenCode =; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
                 createNew(container,"h1","Error: Access Expired. Please Login Again.");
                 setTimeout(function(){
                     onStart();
