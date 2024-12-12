@@ -117,6 +117,23 @@ function RequestCode(){
         key :  myKey,
         action : "trySendToken"
     };
+    sendCode.style.display = "none";
+    const notifier = createNew(container,"p","Kode Terkirim");
+    const notifier2 = createNew(container,"p","Silakan cek email Anda");
+
+    // modify notifier each second for 60s to show countdown after countdown end remove that notifier and set the display of sendCode to Block again
+    let count = 60;
+    const intervalId = setInterval(() => {
+        if (count > 0) {
+            notifier.textContent = `Kode Terkirim (${count} detik)`;
+            count--;
+        } else {
+                clearInterval(intervalId);
+                sendCode.style.display = "block";
+                notifier.remove();
+                notifier2.remove();
+        }
+        }, 1000);
 
     fetch(endpoint, 
     { 
