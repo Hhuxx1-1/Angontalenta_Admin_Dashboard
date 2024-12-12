@@ -111,7 +111,8 @@ function tryAccess(){
             }else if( data.status == "1"){
                 // clear current cookie if there is error and display error message
                 document.cookie = "tokenCode =; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-                createNew(container,"p","Error: Something is Wrong. Please try again.",{class:"notif"});
+                createNew(container,"p","Error: Something is Wrong. Please try again Later.",{class:"notif"});
+                createNew(container,"p",data.message,{class:"notif"});
             }else{
                 document.cookie = "tokenCode =; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
                 createNew(container,"p","Error: Access Expired. Please Login Again.",{class:"notif"});
