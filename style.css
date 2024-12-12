@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Oswald:wght@300;400;500&display=swap');
+
+section {
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 90dvh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #22211e 0%, #22211e 100%);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+section *{
+    width: 95%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+    background: linear-gradient(to bottom, #22211e, #3a3a3a);
+    color : #f1e6e6
+}
+
+h1 {
+    font-size: 2rem;
+    color: #f1e6e6;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #f1e6e6;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #cfc8c8;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#previewImage {
+    position: absolute;
+    margin: 20px 0;
+}
+
+#previewImage canvas {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+form .info {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+}
+
+form input[type="file"] {
+    display: none;
+}
+
+form > div > label {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: wheat;
+    background: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    outline: wheat 2px solid;
+}
+
+form > label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: wheat;
+}
+
+form label:hover {
+    background: #191919;
+}
+
+form label:active {
+    background: #323131;
+}
+
+form.small-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form.small-form label {
+    font-size: 1rem;
+    color: #555;
+}
+
+form input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus {
+    border-color: #007bff;
+}
+
+form button {
+    padding: 10px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+p.info {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin: 0;
+}
+
+#divSubmit {
+    position: fixed;
+    text-align: center;
+    bottom: 10%;
+    width: 60%;
+}
+
+#divSubmit input[type="button"] {
+    font-size: 1rem;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+}
+
+#divSubmit input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#divSubmit input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+#divSubmit input[type="submit"]:active {
+    transform: scale(0.98);
+    background-color: #1e7e34;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#div-form {
+    z-index: 2;
+    width: 70%;
+}
+
+.notif {
+    position: fixed;
+    top: 3%;
+    background: #00000080;
+    padding: 0.2rem;
+    font-size: 1rem;
+}
+
+/* Style specifically for the extra form container */
+#extra-form {
+    max-width: 500px;
+    margin: 20px auto;
+    width: 80%;
+    overflow-y: auto;
+}
+  
+#extra-form::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar in webkit browsers like Chrome and Safari */
+}
+
+#extra-form {
+    -ms-overflow-style: none;  /* Hides the scrollbar in Internet Explorer and Edge */
+    scrollbar-width: none; /* Hides the scrollbar in Firefox */
+}
+  
+/* Style the labels */
+#extra-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #f6f6f6;
+}
+
+/* Style the input fields */
+#extra-form input[type="text"],
+#extra-form input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Style the submit button */
+#extra-form input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Change button hover effect */
+#extra-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style the image preview container */
+#extra-form #imagePreviewContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Style the preview images */
+#extra-form #imagePreviewContainer canvas {
+    width: 100px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+label[for="fileKegiatan"] {
+    background: #bb3d03;
+    width: 60%;
+    padding: 7px 0px;
+    font-size: 1.3rem;
+    border-radius: 7px;
+}
+
+div#errorContainer {
+    position: absolute;
+    top: 1%;
+    width: 70%;
+}
+
+#errorContainer p {
+    font-size: 1.2rem;
+    color: white;
+    background: #7a0101;
+    margin: 6px 17px;
+    border-radius: 7px;
+    padding: 7px;
+}
+
+div.center {
+    width: 50%;
+    margin: 20px auto;
+}
+
+input.button {
+    padding: 10px;
+    font-size: 1rem;
+    color: white;
+    background-color: #909498;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
